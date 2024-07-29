@@ -1,0 +1,6 @@
+# Clojure
+.clj-kondo/
+.lsp/
+
+# OS
+.DS_Store
