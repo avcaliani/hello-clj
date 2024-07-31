@@ -81,40 +81,7 @@
  ([name]
   (str "Hello " name " 🎉"))
  ([first-name last-name]
-  (hello (str first-name " " last-name)))
- )
+  (hello (str first-name " " last-name))))
 
 (hello "joe")
 (hello "joe" "buddy")
-
-
-;; --------------------------
-;; Varargs
-;; --------------------------
-;; https://clojuredocs.org/clojure.core/cons
-;; https://clojuredocs.org/clojure.core/conj
-(defn hello-args
- "A nice example of varargs"
- [& names]
- (clojure.string/join " " (cons "Hello" names)))
-
-(hello-args "joe" "the" "buddy")
-
-;; You can also destruct the varargs (example 1)
-(defn hello-args-v2
- "A varargs example with destructed parameters"
- [first-name & more-names]
- (clojure.string/join " " (conj more-names (clojure.string/upper-case first-name) "Hello")))
-
-(hello-args-v2 "joe" "the" "buddy")
-
-;; Example 2
-;; The difference for the previous example is that now we have a single varargs
-;; parameter (names). Before, we had a first parameter and then a varargs.
-(defn hello-args-v3
- "A varargs example with destructed parameters"
- [& [first-name & more-names :as names]]
- (println "Received" (count names) "arguments, where" (count more-names) "are the surname(s).")
- (clojure.string/join " " (conj more-names (clojure.string/upper-case first-name) "Hello")))
-
-(hello-args-v3 "joe" "the" "buddy")
