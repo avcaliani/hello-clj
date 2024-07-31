@@ -1,3 +1,9 @@
+;; --------------------------
+;; QUICK START
+;; --------------------------
+;; The following code was created to be executed locally in a REPL.
+;; Option 1: Online at "https://tryclojure.org"
+;; Option 2: Local, on your terminal execute "clj"
 (import 'java.time.LocalTime)
 
 ; Non-pure Function
