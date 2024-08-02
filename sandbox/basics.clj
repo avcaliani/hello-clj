@@ -9,13 +9,16 @@
 (println "Hello World 🌎")
 
 ;; Function
+;; ----------
+;; def x defn
+;; defs are evaluated only once whereas defns (with or without arguments) 
+;; are evaluated (executed) every time they are called. 
 (defn hello-world
  "Says hello to someone"
  [name]
  (println "Hello" name "👋"))
 
 (hello-world "joe")
-
 
 ;; --------------------------
 ;; Lambda Function
